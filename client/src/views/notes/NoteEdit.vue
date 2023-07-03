@@ -47,17 +47,16 @@ onMounted(() => getNote(props.id));
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <label for="status">
-                                Status
-                            </label>
-                            <div class="form-group">
-                                <input class="form-control" type="text" id="status" v-model="note.status">
-                            </div>
-                            <div v-if="errors.status">
-                                <span>{{ errors.status[0] }}</span>
-                            </div>
+                            <label for="status">Status</label>
+                            <select class="form-control" id="status" v-model="note.status">
+                                <option selected>Status</option>
+                                <option value="0">Todo</option>
+                                <option value="1">In Progress</option>
+                                <option value="2">Done</option>
+                            </select>
                         </div>
                     </div>
+                    <br>
                     <button class="btn btn-primary btn-block confirm-button">Confirm</button>
                 </form>
             </div>

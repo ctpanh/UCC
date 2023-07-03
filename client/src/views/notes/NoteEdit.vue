@@ -16,7 +16,7 @@ onMounted(() => getNote(props.id));
 <template>
     <div class="container mt-5 mb-5 d-flex justify-content-center">
         <div class="card px-1 py-4">
-            <h6 class="information mt-4" style="text-align: center;">Edit note</h6>
+            <h3 class="information mt-4" style="text-align: center;">Edit note</h3>
             <div class="card-body">
                 <form @submit.prevent="updateNote($route.params.id)">
                     <div class="row">

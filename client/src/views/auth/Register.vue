@@ -12,7 +12,7 @@ const form = ref({
 <template>
     <div class="container mt-5 mb-5 d-flex justify-content-center">
         <div class="card px-1 py-4">
-            <h6 class="information mt-4" style="text-align: center;">Sign up</h6>
+            <h3 class="information mt-4" style="text-align: center;">Sign up</h3>
             <div class="card-body">
                 <form @submit.prevent="authStore.handleRegister(form)">
                     <div class="row">

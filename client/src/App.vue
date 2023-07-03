@@ -7,17 +7,21 @@ const token = localStorage.getItem("token");
 
 <template>
   <header>
-    <div class="max-w-7xl mx-auto">
-      <nav class="p-2">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
-        <RouterLink to="/register">Register</RouterLink>
-        <div v-if="token"> 
-          <RouterLink to="/notes">Notes</RouterLink>
-          <button @click="useAuthStore().handleLogout">Logout</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <RouterLink class="navbar-brand" to="/">Home</RouterLink>
+      <div v-if="token">
+        <RouterLink class="navbar-brand" to="/notes">Notes</RouterLink>
+      </div>
+      <div class="navbar-nav ml-auto">
+        <div v-if="token">
+          <button @click="useAuthStore().handleLogout" class="btn btn-outline-dark">Logout</button>
         </div>
-      </nav>
-    </div>
+        <div v-else>
+          <RouterLink to="/login" class="btn btn-outline-dark">Login</RouterLink>
+          <RouterLink to="/register" class="btn btn-outline-dark">Register</RouterLink>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main class="max-w-7xl mx-auto min-h-screen">

@@ -14,38 +14,53 @@ const props = defineProps({
 onMounted(() => getNote(props.id));
 </script>
 <template>
-    <form @submit.prevent="updateNote($route.params.id)">
-        <div>
-            <div>
-                <label for="title">
-                    Title
-                </label>
-                <input type="text" id="title" v-model="note.title">
-                <div v-if="errors.title">
-                    <span>{{ errors.title[0] }}</span>
-                </div>
-            </div>
-            <div>
-                <label for="description">
-                    Description
-                </label>
-                <input type="text" id="description" v-model="note.description">
-                <div v-if="errors.description">
-                    <span>{{ errors.description[0] }}</span>
-                </div>
-            </div>
-            <div>
-                <label for="status">
-                    Status
-                </label>
-                <input type="text" id="status" v-model="note.status">
-                <div v-if="errors.status">
-                    <span>{{ errors.status[0] }}</span>
-                </div>
+    <div class="container mt-5 mb-5 d-flex justify-content-center">
+        <div class="card px-1 py-4">
+            <h6 class="information mt-4" style="text-align: center;">Edit note</h6>
+            <div class="card-body">
+                <form @submit.prevent="updateNote($route.params.id)">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="title">
+                                Title
+                            </label>
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="title" v-model="note.title">
+                            </div>
+                            <div v-if="errors.title">
+                                <span>{{ errors.title[0] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="description">
+                                Description
+                            </label>
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="description" v-model="note.description">
+                            </div>
+                            <div v-if="errors.description">
+                                <span>{{ errors.description[0] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="status">
+                                Status
+                            </label>
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="status" v-model="note.status">
+                            </div>
+                            <div v-if="errors.status">
+                                <span>{{ errors.status[0] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block confirm-button">Confirm</button>
+                </form>
             </div>
         </div>
-        <div>
-            <button type="submit">Store</button>
-        </div>
-    </form>
+    </div>
 </template>

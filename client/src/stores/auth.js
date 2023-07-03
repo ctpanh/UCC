@@ -15,13 +15,13 @@ export const useAuthStore = defineStore("auth", {
         async handleLogin(data) {
             this.authErrors = [];
             try {
+                console.log(data.username, data.password);
                 const response = await axios.post("/auth/login", {
                     username: data.username,
                     password: data.password,
                 });
                 const token = response.data.accessToken;
                 localStorage.setItem("token", token);
-                // console.log("token: " + token);
                 this.router.push("/notes");
             } catch (error) {
                 if (error.response.status === 422) {

@@ -10,40 +10,40 @@ const form = ref({
 });
 </script>
 <template>
-    <section>
-        <div>
-            <div>
-                <div>
-                    <div>
-                        <div>Login</div>
-                        <form @submit.prevent="authStore.handleLogin(form)">
-                            <div>
-                                <input type="text" v-model="form.username" placeholder="Username" />
-                                <div v-if="authStore.errors.username">
-                                    <span>{{ authStore.errors.username[0] }}</span>
-                                </div>
+    <div class="container mt-5 mb-5 d-flex justify-content-center">
+        <div class="card px-1 py-4">
+            <h6 class="information mt-4" style="text-align: center;">Login</h6>
+            <div class="card-body">
+                <form @submit.prevent="authStore.handleLogin(form)">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="username" placeholder="username" v-model="form.username" >
                             </div>
-                            <div>
-                                <input type="password" v-model="form.password" placeholder="Password"/>
-                                <div v-if="authStore.errors.password">
-                                    <span>{{ authStore.errors.password[0] }}</span>
-                                </div>
+                            <div v-if="authStore.errors.username">
+                                <span>{{ errors.username[0] }}</span>
                             </div>
-                            <div>
-                                <button type="submit">
-                                    Login
-                                </button>
-                            </div>
-                        </form>
-                        <p>
-                            Not a member yet?
-                            <router-link to="/register">
-                                Sign Up
-                            </router-link>
-                        </p>
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <input class="form-control" type="password" id="password" placeholder="password" v-model="form.password" >
+                            </div>
+                            <div v-if="authStore.errors.password">
+                                <span>{{ errors.password[0] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block confirm-button">Confirm</button>
+                </form>
+                <p>
+                    Not a member yet?
+                    <router-link to="/register">
+                        Sign Up
+                    </router-link>
+                </p>
             </div>
         </div>
-    </section>
+    </div>
 </template>

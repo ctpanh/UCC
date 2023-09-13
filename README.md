@@ -1,7 +1,7 @@
 # Todo List Website
 
 ## Introduction
-Todo list - a simple CRUD website.
+A simple CRUD website - Todo List to manage your tasks, projects, and team's work.
 
 ## Technology
 - Front-end: VueJs

@@ -1,4 +1,4 @@
-# Japper Website
+# Todo List Website
 
 ## Introduction
 Todo list - a simple CRUD website.

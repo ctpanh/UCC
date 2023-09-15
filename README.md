@@ -12,7 +12,7 @@ A simple CRUD website - Todo List to manage your tasks, projects, and team's wor
 ```bash
 # clone project
 git clone [https://github.com/ctpanh/UCC.git](https://github.com/ctpanh/UCC.git)
-cd Questgen
+cd UCC
 # Run backend
 cd server
 npm install
